@@ -1,0 +1,205 @@
+LS(1)                            User Commands                           LS(1)
+
+NNAAMMEE
+       ls - list directory contents
+
+SSYYNNOOPPSSIISS
+       llss [_O_P_T_I_O_N]... [_F_I_L_E]...
+
+DDEESSCCRRIIPPTTIIOONN
+       List  information  about  the FILEs (the current directory by default).
+       Sort entries alphabetically if none of --ccffttuuvvSSUUXX nor ----ssoorrtt  is  speci‐
+       fied.
+
+       Mandatory  arguments  to  long  options are mandatory for short options
+       too.
+
+       --aa, ----aallll
+              do not ignore entries starting with .
+
+       --AA, ----aallmmoosstt--aallll
+              do not list implied . and ..
+
+       ----aauutthhoorr
+              with --ll, print the author of each file
+
+       --bb, ----eessccaappee
+              print C-style escapes for nongraphic characters
+
+       ----bblloocckk--ssiizzee=_S_I_Z_E
+              with  --ll,  scale  sizes  by  SIZE  when  printing  them;   e.g.,
+              '--block-size=M'; see SIZE format below
+
+       --BB, ----iiggnnoorree--bbaacckkuuppss
+              do not list implied entries ending with ~
+
+       --cc     with --lltt: sort by, and show, ctime (time of last modification of
+              file status information); with --ll: show ctime and sort by  name;
+              otherwise: sort by ctime, newest first
+
+       --CC     list entries by columns
+
+       ----ccoolloorr[=_W_H_E_N]
+              colorize  the output; WHEN can be 'always' (default if omitted),
+              'auto', or 'never'; more info below
+
+       --dd, ----ddiirreeccttoorryy
+              list directories themselves, not their contents
+
+       --DD, ----ddiirreedd
+              generate output designed for Emacs' dired mode
+
+       --ff     do not sort, enable --aaUU, disable --llss ----ccoolloorr
+
+       --FF, ----ccllaassssiiffyy
+              append indicator (one of */=>@|) to entries
+
+       ----ffiillee--ttyyppee
+              likewise, except do not append '*'
+
+       ----ffoorrmmaatt=_W_O_R_D
+              across --xx, commas --mm, horizontal --xx, long --ll, single-column  --11,
+              verbose --ll, vertical --CC
+
+       ----ffuullll--ttiimmee
+              like --ll ----ttiimmee--ssttyyllee=_f_u_l_l_-_i_s_o
+
+       --gg     like --ll, but do not list owner
+
+       ----ggrroouupp--ddiirreeccttoorriieess--ffiirrsstt
+              group directories before files;
+
+              can   be  augmented  with  a  ----ssoorrtt  option,  but  any  use  of
+              ----ssoorrtt=_n_o_n_e (--UU) disables grouping
+
+       --GG, ----nnoo--ggrroouupp
+              in a long listing, don't print group names
+
+       --hh, ----hhuummaann--rreeaaddaabbllee
+              with --ll and --ss, print sizes like 1K 234M 2G etc.
+
+       ----ssii   likewise, but use powers of 1000 not 1024
+
+       --HH, ----ddeerreeffeerreennccee--ccoommmmaanndd--lliinnee
+              follow symbolic links listed on the command line
+
+       ----ddeerreeffeerreennccee--ccoommmmaanndd--lliinnee--ssyymmlliinnkk--ttoo--ddiirr
+              follow each command line symbolic link
+
+              that points to a directory
+
+       ----hhiiddee=_P_A_T_T_E_R_N
+              do not list implied entries matching shell  PATTERN  (overridden
+              by --aa or --AA)
+
+       ----hhyyppeerrlliinnkk[=_W_H_E_N]
+              hyperlink file names; WHEN can be 'always' (default if omitted),
+              'auto', or 'never'
+
+       ----iinnddiiccaattoorr--ssttyyllee=_W_O_R_D
+              append indicator with style WORD to entry names: none (default),
+              slash (--pp), file-type (----ffiillee--ttyyppee), classify (--FF)
+
+       --ii, ----iinnooddee
+              print the index number of each file
+
+       --II, ----iiggnnoorree=_P_A_T_T_E_R_N
+              do not list implied entries matching shell PATTERN
+
+       --kk, ----kkiibbiibbyytteess
+              default  to  1024-byte  blocks for disk usage; used only with --ss
+              and per directory totals
+
+       --ll     use a long listing format
+
+       --LL, ----ddeerreeffeerreennccee
+              when showing file information for a symbolic link, show informa‐
+              tion  for  the file the link references rather than for the link
+              itself
+
+       --mm     fill width with a comma separated list of entries
+
+       --nn, ----nnuummeerriicc--uuiidd--ggiidd
+              like --ll, but list numeric user and group IDs
+
+       --NN, ----lliitteerraall
+              print entry names without quoting
+
+       --oo     like --ll, but do not list group information
+
+       --pp, ----iinnddiiccaattoorr--ssttyyllee=_s_l_a_s_h
+              append / indicator to directories
+
+       --qq, ----hhiiddee--ccoonnttrrooll--cchhaarrss
+              print ? instead of nongraphic characters
+
+       ----sshhooww--ccoonnttrrooll--cchhaarrss
+              show nongraphic characters as-is (the default, unless program is
+              'ls' and output is a terminal)
+
+       --QQ, ----qquuoottee--nnaammee
+              enclose entry names in double quotes
+
+       ----qquuoottiinngg--ssttyyllee=_W_O_R_D
+              use  quoting style WORD for entry names: literal, locale, shell,
+              shell-always,  shell-escape,  shell-escape-always,   c,   escape
+              (overrides QUOTING_STYLE environment variable)
+
+       --rr, ----rreevveerrssee
+              reverse order while sorting
+
+       --RR, ----rreeccuurrssiivvee
+              list subdirectories recursively
+
+       --ss, ----ssiizzee
+              print the allocated size of each file, in blocks
+
+       --SS     sort by file size, largest first
+
+       ----ssoorrtt=_W_O_R_D
+              sort  by  WORD instead of name: none (--UU), size (--SS), time (--tt),
+              version (--vv), extension (--XX)
+
+       ----ttiimmee=_W_O_R_D
+              change the default of  using  modification  times;  access  time
+              (--uu): atime, access, use; change time (--cc): ctime, status; birth
+              time: birth, creation;
+
+              with --ll, WORD determines which time to show;  with  ----ssoorrtt=_t_i_m_e,
+              sort by WORD (newest first)
+
+       ----ttiimmee--ssttyyllee=_T_I_M_E___S_T_Y_L_E
+              time/date format with --ll; see TIME_STYLE below
+
+       --tt     sort by time, newest first; see ----ttiimmee
+
+       --TT, ----ttaabbssiizzee=_C_O_L_S
+              assume tab stops at each COLS instead of 8
+
+       --uu     with  --lltt:  sort by, and show, access time; with --ll: show access
+              time and sort by name; otherwise: sort by  access  time,  newest
+              first
+
+       --UU     do not sort; list entries in directory order
+
+       --vv     natural sort of (version) numbers within text
+
+       --ww, ----wwiiddtthh=_C_O_L_S
+              set output width to COLS.  0 means no limit
+
+       --xx     list entries by lines instead of by columns
+
+       --XX     sort alphabetically by entry extension
+
+       --ZZ, ----ccoonntteexxtt
+              print any security context of each file
+
+       --11     list one file per line.  Avoid '\n' with --qq or --bb
+
+       ----hheellpp display this help and exit
+
+       ----vveerrssiioonn
+              output version information and exit
+
+       The  SIZE  argument  is  an  integer and optional unit (example: 10K is
+       10*1024).  Units are K,M,G
