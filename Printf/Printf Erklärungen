@@ -1,0 +1,18 @@
+
+
+		ft_printf;/		Implementierung der printf-Funktion mit Unterstützung für verschiedene Format-Spezifikatoren
+		print_format;/		es wird je nach dem Format-Spezifikator sign die entsprechende Funktion aufgerufen, um den Wert aus den args zu extrahieren und auszugeben.
+		print_char;/		gibt ein einzelnes Zeichen auf dem Bildschirm aus.
+		print_str;/		gibt eine Zeichenkette (String) auf dem Bildschirm aus.
+		print_digit;/		gibt eine Ganzzahl (Integer) im angegebenen Zahlensystem (Basis) aus.
+		print_unsigned;/	gibt eine vorzeichenlose Ganzzahl im Dezimalsystem aus. (basis 10)
+		print_ptr;/		gibt eine vorzeichenlose Ganzzahl im Hexadezimalsystem aus. (basis 16)
+		print_pointer;/		gibt die Hexadezimaldarstellung einer vorzeichenlosen Ganzzahl aus, die aus dem Argument ap extrahiert wird. Falls die Zahl 0 ist, wird "(nil)" ausgegeben.
+		
+		va_list;/		ist ein Datenobjekt vom Typ va_list, das von va_start, va_arg und va_end verwendet wird, um auf die variablen Argumente zuzugreifen.
+		va_start;/		initialisiert den Zugriff auf die variablen Argumente in einer variadischen Funktion.
+		va_arg;/		wird verwendet, um den Wert des nächsten Arguments im Argumentenstrom der variadischen Funktion abzurufen.
+		va_copy;/		wird verwendet, um eine Kopie einer va_list zu erstellen.
+		va_end;/		wird aufgerufen, um die va_list zu bereinigen, nachdem die variadischen Argumente verarbeitet wurden.
+		
+		
