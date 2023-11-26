@@ -1,0 +1,46 @@
+
+		ft_atoi;/		wandelt eine Zeichenkette in eine ganzzahl (int) um
+		ft_isalnum;/		die prüft, ob ein Zeichen ein alphanumerisches Zeichen (Buchstabe oder Zahl) ist.
+		ft_isalpha;/		prüft, ob ein Zeichen ein Buchstabe ist.
+		ft_isascii;/		prüft, ob ein Zeichen ein ASCII-Zeichen ist.
+		ft_isdigit;/		prüft, ob ein Zeichen eine Dezimalziffer (0 bis 9) ist.
+		ft_isprint;/		prüft, ob ein Zeichen druckbar ist (darstellbar auf dem Bildschirm) oder nicht.
+		ft_putchar_fd;/		schreibt ein einzelnes Zeichen auf den angegebenen Dateideskriptor (File Descriptor).
+		ft_putendl_fd;/		gibt eine Zeichenkette gefolgt von einem Zeilenumbruch auf den angegebenen Dateideskriptor aus.
+		ft_putnbr_fd;/		gibt eine ganze Zahl auf den angegebenen Dateideskriptor aus.
+		ft_putstr_fd;/		schreibt einen Zeichenstring auf den durch die Dateideskriptornummer angegebenen Ausgabestrom.
+		ft_strlcat;/		ermöglicht das Anhängen von Zeichenketten mit begrenzter Länge.
+		ft_strlen;/		berechnet die Länge einer Zeichenkette.
+		ft_strlcpy;/		kopiert eine Zeichenkette in einen anderen Zeichenpuffer und begrenzt dabei die Anzahl der kopierten Zeichen.
+		ft_strncmp;/		vergleicht eine bestimmte Anzahl an Zeichen von zwei Zeichenketten.
+		ft_tolower;/		wandelt einen Großbuchstaben in einen Kleinbuchstaben um.
+		ft_toupper;/		wandelt einen Kleinbuchstaben in einen Großbuchstaben um.
+		ft_calloc;/		stellt dynamischen Speicher für einen bestimmten Datentyp bereit und setzt alle Bytes auf Null.
+		ft_itoa;/		wandelt eine ganzzahl (int) in einen Zeichenkette um.
+		ft_bzero;/		setzt jeden Byte-Wert auf 0 (Null).
+		ft_strdup;/		erstellt eine Kopie einer Zeichenkette und speichert in dynamisch.
+		ft_memcpy;/		kopiert den Inhalt eines Speicherbereichs in einen anderen.
+		ft_memset;/		füllt einen Speicherbereich mit einem bestimmten Byte-Wert.
+		ft_memcmp;/		vergleicht zwei Speicherblöcke vergleicht und gibt den Unterschied zwischen ihnen in Form eines Integer-Werts zurück.
+		ft_memchr;/		gibt einen Zeiger auf das erste Vorkommen dieses Bytes zurück oder NULL, falls das Byte nicht gefunden wird.
+		ft_memmove;/		kopiert Daten von einem Speicherbereich in einen anderen, wobei sich die Quell- und Zielbereiche überlappen können, ohne dass die Daten beschädigt werden.
+		ft_strchr;/		gibt den Zeiger auf das erste Vorkommen eines bestimmten Zeichens in einer Zeichenkette zurück.
+		ft_strrchr;/		gibt den Zeiger auf das letzte Vorkommen eines bestimmten Zeichens in einer Zeichenkette zurück.
+		ft_strjoin;/		verbindet zwei Zeichenketten zu einer neuen Zeichenkette und gibt den resultierenden zusammengesetzten String zurück.
+		ft_strnstr;/		sucht in einem Zeichenstring nach einer Teilzeichenkette, wobei eine maximale Anzahl von Zeichen für die Suche angegeben wird.
+		ft_lstnew;/		erstellt ein neues Listenelement und gibt einen Zeiger darauf zurück.
+		ft_lstsize;/		zählt die Anzahl der Elemente in einer verketteten Liste und gibt sie zurück.
+		ft_strmapi;/		wendet auf jeden Zeichen einer Zeichenkette eine Funktion an und gibt die neue Zeichenkette zurück.
+		ft_striteri;/		wendet auf jeden Zeichen einer Zeichenkette eine Funktion an und gibt die selbe Zeichenkette zurück.
+		ft_substr;/		extrahiert einen Teil einer Zeichenkette, beginnend ab einer angegebenen Startposition und mit einer angegebenen Länge, und gibt die extrahierte Zeichenkette zurück
+		ft_lstadd_back;/	fügt ein neues Listenelement am Ende einer vorhandenen verketteten Liste hinzu.
+		ft_lstadd_front;/	fügt ein neues Listenelement am Anfang einer vorhandenen verketteten Liste hinzu
+		ft_lstclear;/		löscht eine verkettete Liste und deren Inhalte, indem sie den Speicher für jedes Element freigibt und den Kopf der Liste auf NULL setzt.
+		ft_lstdelone;/		löscht ein einzelnes Element einer verketteten Liste, gibt den Speicher für dessen Inhalt frei und verknüpft die entsprechenden Zeiger neu.
+		ft_lstiter;/		wendet eine benutzerdefinierte Funktion auf jedes Element einer verketteten Liste an.
+		ft_lstlast;/		gibt das letzte Element in einer verketteten Liste zurück.
+		ft_lstmap;/		wendet auf eine Liste von Elementen eine angegebene Funktion an und erstellt eine neue Liste mit den Ergebnissen der Funktion.	
+		ft_split;/		teilt eine Zeichenkette anhand eines angegebenen Trennzeichens auf und  gibt ein Array von Teilzeichenketten zurück.
+		ft_strtrim;/		gibt eine Zeichenkette ohne führende und abschließende Leerzeichen (oder andere angegebene Zeichen) zurück.
+		
+		
