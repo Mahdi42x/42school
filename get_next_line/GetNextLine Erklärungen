@@ -1,0 +1,13 @@
+
+		
+		ft_strchr;/		gibt den Zeiger auf das erste Vorkommen eines bestimmten Zeichens in einer Zeichenkette zurück.
+		ft_strdup;/		Die Funktion ft_strdup dupliziert eine Zeichenkette und gibt einen Zeiger auf die neu erstellte Zeichenkette zurück.
+		ft_strlen;/		ft_strlen gibt die Länge einer Zeichenkette zurück.
+		ft_substr;/		ft_substr gibt eine Teilzeichenkette zurück, beginnend bei einer bestimmten Position (start) und mit einer angegebenen Länge (len).
+		ft_strjoin;/		ft_strjoin fügt zwei Zeichenketten zusammen und gibt die resultierende Zeichenkette zurück.
+		get_next_line;/		get_next_line liest eine Zeile aus einer Datei mit dem gegebenen Dateideskriptor (fd) und gibt sie zurück.
+		_fill_line_buffer;/	_fill_line_buffer liest Daten aus einem Dateideskriptor (fd) in einen Puffer (buffer) und fügt den Puffer dem nicht verwendeten Teil der vorherigen Zeile hinzu.
+		_set_line;/		Die Funktion _set_line extrahiert den nicht verwendeten Teil der vorherigen Zeile und aktualisiert die statische Variable left_c entsprechend.
+		fill_str;/		Die Funktion fill_str füllt eine Zielzeichenkette mit den Zeichen aus zwei Quellzeichenketten.
+
+
