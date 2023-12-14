@@ -1,0 +1,88 @@
+theory for born2beroot
+
+			1.	How a virtual maschine works.
+			2.	My choice of the operating system (os).
+			3.	basic difference between Rocky & Debian.
+			4.	purpose of virtual maschines.
+			5.	difference between aptitude & apt and what APPArmor is.	
+			6.	how I set up the rules (password policy & login rules)
+			7.	explain the advantages of my password policy
+			8.	explain the value and operation of sudo, show the implentation of the 
+				rules imposed by the subject
+			9.	explain what ufw is and the value of it.
+			10.	explain what ssh is and the value of it.
+			11.	explain the script code (monitoring)
+			12.	explain cron
+			
+			1.	works as a software emulating actual hardware (you can run other os 	
+				without other pc)
+			
+			2.	Easier to install and configure so better for personal servers
+			
+			3.	debian: Debian is more user-friendly and supports many libraries,
+			 	filesystems and architecture. It also has more options for
+			 	customisation.
+				centOs: CentOS offers more Enterprise features and excellent support
+				for the Enterprise software.
+				 
+			4.	it can be used to test applications in a safe environment, 
+				to save money and time.
+				
+			5.	Aptitude is a high-level package manager while APT is 			
+				lower level which can be used by other higher level package managers.
+				
+				Aptitude is smarter and will automatically remove unused packages or 
+				suggest installation of dependent packages
+				
+				Apt will only do explicitly what it is told to do in the command line	
+				
+				Linux security system that provides Mandatory Access Control (MAC) 
+				security. Allows the system admin to restrict the actions that 
+				processes can perform. It is included by default with Debian.
+				Run sudo systemctl status apparmor to check if it is running.
+				
+			6.	I installed a password quality checking library 
+					`sudo apt-get install libpam-pwquality`
+					
+				then I edited a file called common password to add my own parameters
+					`sudo vim /etc/pam.d/common-password`
+					
+				changed the parameters of logins
+					`sudo vim /etc/login.defs`
+					
+			7.	it makes it harder for people without authorization
+				to access protected data
+				however, the day to day use becomes more troublesome as logging in
+				everytime can be frustrating
+				
+				LVM = Logical Volume Manager – allows us to easily manipulate the 
+				      partitions or logical volume on a storage device
+				
+			8.	 sudo allows a permitted user to execute a command as the superuser or 
+				 another user, but only for specific tasks. 
+				 for example =  apt-get install: Installation von Softwarepaketen.
+						apt-get remove: Deinstallation von Softwarepaketen.
+						apt-get update: Aktualisierung der Paketinformationen.
+						shutdown: Herunterfahren des Systems.
+						reboot: Neustart des Systems.
+						adduser: Hinzufügen eines neuen Benutzers.
+						deluser: Löschen eines Benutzers.
+						cat /etc/sudoers
+						
+			9.	UFW is a interface to modify the firewall of the device without 
+				compromising security. You use it to configure which ports to allow 
+				connections to and which ports to close. This is useful in conjunction 
+				with SSH, can set a specific port for it to work with
+				
+			10.	*secure shell, allows 2 computers to securely talk to each other*	
+				authentication mechanism between a client and a host. It uses 
+				encryption techniques so that all communication between clients and 
+				hosts is done in encrypted form. User on Mac or Linux can use SSH the 
+				terminal to work on their server via SSH.
+				
+			11.
+			
+			12.	Cron is a command line utility to schedule commands or scripts to 
+				happen at specific intervals or a specific time each day. Useful if you 
+				want to set your server to restart at a specific time each day.
+			

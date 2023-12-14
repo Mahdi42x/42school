@@ -1,0 +1,82 @@
+notes for born2beroot
+	
+	Signature:	cd
+			cd  sgoinfre/students/mawada/Born2beRoot/Born2beRoot
+			shasum Born2beRoot.vdi
+			
+	Questions:
+			How a virtual maschine works.
+			My choice of the operating system (os).
+			basic difference between Rocky & Debian.
+			purpose of virtual maschines.
+			difference between aptitude & apt and what APPArmor is.	
+			
+	check commands:
+			UFW Status = sudo ufw status 
+				     dpkg -l | grep ufw
+			SSH Status = sudo service ssh status 
+				     dpkg -l | grep ssh
+			OS Status  = cat /etc/issue
+				     cat /etc/os-release
+				     hostnamectl
+	
+	user check:
+			my user information  = cat /etc/passwd | grep <user>
+			all user information = getent passwd
+		        check the groups     = getent group sudo user42
+		        
+	create new user:
+			create user     = sudo adduser new_username
+			
+				how I set up the rules:
+					installed the password quality checking library      = sudo apt-get install libpam-pwquality
+					edited file common password to add my own parameters = sudo vim /etc/pam.d/common-password
+					changed the parameters of logins                     = sudo vim /etc/login.defscomply
+					
+			create group         = sudo groupadd <evaluating>
+			add user to group    = usermod -aG evaluating new_username
+			check the groups     = getent group evaluating
+			delete a user        = sudo deluser <username>
+			explain the advantages of my password policy ()
+			
+	Hostname:
+			check the Hostname   = hostnamectl
+			change th Hostname   = sudo hostnamectl set-hostname new_hostname
+			reboot the Vm        = sudo reboot
+			check the Partitions = lsblk
+			
+	Sudo:
+			check sudo = dpkg -l | grep sudo
+			usermod -a -G sudo new_username
+			explain the value and operation of sudo, show the implentation of the rules imposed by the subject
+			folder check 	     = 	cd /var/log/sudo
+				           	ls
+				            	cat sudo.log
+			any sudo command     =	sudo visudo
+			recheck the sudo.log =  cat sudo.log
+			
+	UFW/FIREWALL:
+			check if its install	  = dpkg -l | grep ufw
+						    sudo ufw status
+			explain what ufw is and the value of it.
+			check the ports		  = sudo ufw status numbered
+			allows port through ufw   = sudo ufw allow <port>
+			deleted ufw rule	  = sudo ufw delete <num>
+			
+	SSH:
+			check if its install	  = dpkg -l | grep ssh	
+						    sudo service ssh status
+			explain what ssh is and the value of it.
+			check the port of ssh	  = sudo service ssh status
+			connecting with ssh	  = ssh your_username@127.0.0.1 -p 4243
+						    (port 4242 is occupied on the 42 network)
+			disconnect the ssh	  = exit
+			
+	Script monitoring:
+			show the scriptcode	= cd /usr/local/bin && nano monitoring.sh
+			explain the code
+			show the cron schedule  = sudo crontab -l 
+			explain cron
+			change cron 		= sudo crontab -u root -e
+			stop cron tasks		= sudo systemctl disable cron
+			start cron tasks	= sudo systemctl enable cron
