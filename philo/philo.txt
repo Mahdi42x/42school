@@ -1,0 +1,20 @@
+
+Threads: (ein prozess der paralell ausgefuehrt werden kann)
+pthread_create(): Zum Erstellen eines neuen Threads.
+pthread_join(): Zum Warten auf die Beendigung eines Threads.
+pthread_exit(): Zum Beenden des aktuellen Threads.
+pthread_mutex_init(), pthread_mutex_lock(), pthread_mutex_unlock(): Zur Synchronisierung von Threads mit Mutexen (gegenseitiger Ausschluss).
+pthread_cond_init(), pthread_cond_wait(), pthread_cond_signal(), pthread_cond_broadcast(): Zur Synchronisierung von Threads mit Bedingungsvariablen.
+
+Mutex: (was ist das?)
+Ein Mutex sorgt dafuer dass mehrere Threads nicht auf
+die selbe Ressource zugreifen koennen, wenn dieser grad 
+in benutzung ist. 
+Heisst wenn Philo2 beide Gabeln benutzt, wird der Zugriff
+der Gabeln die in benutzung sind fuer Philo1 und Philo2 gesperrt.
+
+pthread_mutex_init(), pthread_mutex_lock(), pthread_mutex_unlock(): 
+Zur Synchronisierung von Threads mit Mutexen (gegenseitiger Ausschluss).
+
+wichtig: Ein Mutex muss am ende immer wieder freigegeben werden! 
+-> pthread_mutex_destroy(&mutex);
