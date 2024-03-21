@@ -6,7 +6,7 @@
 /*   By: mawada <mawada@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 15:17:46 by mawada            #+#    #+#             */
-/*   Updated: 2024/03/16 15:31:17 by mawada           ###   ########.fr       */
+/*   Updated: 2024/03/21 15:49:24 by mawada           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,10 +54,20 @@ int	write_error(char *str);
 int	error_manager(int error);
 
 //----- init.c -----
+int	init_all(t_rules *rules, char **argv);
+int	init_mutex(t_rules *rules);
+int	init_philosophers(t_rules *rules);
 
 //----- utils.c -----
 int	ft_atoi(const char *str);
+void					action_print(t_rules *rules, int id, char *string);
+long long				timestamp(void);
+long long				time_diff(long long past, long long pres);
+void					smart_sleep(long long time, t_rules *rules);
 
 //----- launcher.c -----
+int		launcher(t_rules *rules);
+void	philo_eats(t_philosopher *philosopher);
+void	exit_launcher(t_rules *rules, t_philosopher *philos);
 
 #endif

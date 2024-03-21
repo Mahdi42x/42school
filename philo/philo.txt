@@ -18,3 +18,19 @@ Zur Synchronisierung von Threads mit Mutexen (gegenseitiger Ausschluss).
 
 wichtig: Ein Mutex muss am ende immer wieder freigegeben werden! 
 -> pthread_mutex_destroy(&mutex);
+
+
+t_rules:
+
+Diese Struktur enthält die Regeln und Parameter für deine Philosophen-Simulation.
+nb_philo: Die Anzahl der Philosophen.
+time_death: Die Zeit, nach der ein Philosoph stirbt, wenn er nicht isst.
+time_eat: Die Zeit, die ein Philosoph zum Essen benötigt.
+time_sleep: Die Zeit, die ein Philosoph zum Schlafen benötigt.
+all_ate: Ein Flag, das angibt, ob alle Philosophen mindestens einmal gegessen haben.
+dieded: Ein Flag, das angibt, ob ein Philosoph gestorben ist.
+first_timestamp: Ein Zeitstempel, der den Startzeitpunkt der Simulation speichert.
+meal_check: Ein Mutex zum Schutz des Essenszählers.
+forks: Ein Array von Mutexen, die die Gabeln darstellen, die von den Philosophen verwendet werden.
+writing: Ein Mutex zum Schutz des Schreibens in die Konsole.
+philosophers: Ein Array von t_philosopher-Strukturen, das die einzelnen Philosophen in der Simulation repräsentiert.
