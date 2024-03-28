@@ -6,7 +6,7 @@
 /*   By: mawada <mawada@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 15:17:37 by mawada            #+#    #+#             */
-/*   Updated: 2024/03/21 16:25:57 by mawada           ###   ########.fr       */
+/*   Updated: 2024/03/28 16:52:45 by mawada           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,8 @@ void	print_philosophers(t_rules *rules, int num_philosophers)
 		printf("right_fork_id: %d\n", rules->philosophers[i].right_fork_id);
 		printf("t_last_meal: %lld\n", rules->philosophers[i].t_last_meal);
 		printf("rules: %p\n", (void *)rules->philosophers[i].rules);
-		printf("thread_id: %lu\n", (unsigned long)rules->philosophers[i].thread_id);
+		printf("thread_id: %lu\n", (unsigned long)
+			rules->philosophers[i].thread_id);
 		printf("\n");
 		i++;
 	}
@@ -51,15 +52,20 @@ int	main(int argc, char **argv)
 
 	if (argc != 5 && argc != 6)
 		return (write_error("Wrong amount of arguments"));
-	// printf("Daten vor der Initialisierung:\n");
-	// print_rules(&rules);
-	// print_philosophers(&rules, rules.nb_philo);
-	if ((return_ = init_all(&rules, argv)))
+	return_ = init_all(&rules, argv);
+	if (return_)
 		return (error_manager(return_));
-	// printf("Daten nach der Initialisierung:\n");
-	// print_rules(&rules);
-	// print_philosophers(&rules, rules.nb_philo);
 	if (launcher(&rules))
 		return (write_error("There was an error creating the threads"));
 	return (0);
 }
+
+/*
+	// printf("Data before initialization:\n");
+	// print_rules(&rules);
+	// print_philosophers(&rules, rules.nb_philo);
+
+	// printf("Data after initialization:\n");
+	// print_rules(&rules);
+	// print_philosophers(&rules, rules.nb_philo);
+*/

@@ -6,7 +6,7 @@
 /*   By: mawada <mawada@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 15:19:49 by mawada            #+#    #+#             */
-/*   Updated: 2024/03/21 11:35:44 by mawada           ###   ########.fr       */
+/*   Updated: 2024/03/22 14:01:53 by mawada           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,11 @@ long long	time_diff(long long past, long long pres)
 {
 	return (pres - past);
 }
+
 //pausiert die Ausführung für eine bestimmte Zeit
-void		smart_sleep(long long time, t_rules *rules)
+void	smart_sleep(long long time, t_rules *rules)
 {
-	long long i;
+	long long	i;
 
 	i = timestamp();
 	while (!(rules->dieded))
@@ -64,7 +65,7 @@ void		smart_sleep(long long time, t_rules *rules)
 }
 
 //dient zum Ausgeben von Aktivitäten der Philosophen in der Konsole
-void		action_print(t_rules *rules, int id, char *string)
+void	action_print(t_rules *rules, int id, char *string)
 {
 	pthread_mutex_lock(&(rules->writing));
 	if (!(rules->dieded))

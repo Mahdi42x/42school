@@ -6,15 +6,16 @@
 /*   By: mawada <mawada@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 11:36:43 by mawada            #+#    #+#             */
-/*   Updated: 2024/03/21 16:32:48 by mawada           ###   ########.fr       */
+/*   Updated: 2024/03/28 16:44:39 by mawada           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../philo.h"
 
+//Die Funktion philo_eats lässt einen Philosophen essen.
 void	philo_eats(t_philosopher *philosopher)
 {
-	t_rules *rules;
+	t_rules	*rules;
 
 	rules = philosopher->rules;
 	pthread_mutex_lock(&(rules->forks[philosopher->left_fork_id]));
@@ -31,6 +32,7 @@ void	philo_eats(t_philosopher *philosopher)
 	pthread_mutex_unlock(&(rules->forks[philosopher->right_fork_id]));
 }
 
+//simuliert das Leben eines Philosophen.
 void	*p_thread(void *void_philosopher)
 {
 	int				i;
@@ -55,9 +57,10 @@ void	*p_thread(void *void_philosopher)
 	return (NULL);
 }
 
+//freigeben der Mutex. (THREADS muessen in den Wartemodus gesetzt werden)
 void	exit_launcher(t_rules *rules, t_philosopher *philos)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	while (++i < rules->nb_philo)
@@ -68,42 +71,37 @@ void	exit_launcher(t_rules *rules, t_philosopher *philos)
 	pthread_mutex_destroy(&(rules->writing));
 }
 
-void death_checker(t_rules *rules, t_philosopher *philosopher) {
-    int i;
+//checkt, ob jemand gestorben ist.
+void	death_checker(t_rules *rules, t_philosopher *philosopher)
+{
+	int			i;
+	long long	time_since_last_meal;
 
-    while (!(rules->all_ate)) {
-        i = -1;
-        while (++i < rules->nb_philo && !(rules->dieded)) {
-            pthread_mutex_lock(&(rules->meal_check));
-            long long time_since_last_meal = time_diff(philosopher[i].t_last_meal, timestamp());
-            if (time_since_last_meal > rules->time_death)
-			{
-                // Der Philosoph ist gestorben
-                // Hier könnten weitere Aktionen ausgeführt werden, wie das Setzen von Flags, Drucken von Nachrichten usw.
-                rules->dieded = 1;
-                printf("Philosopher %d died after %lld milliseconds of starvation.\n", i, time_since_last_meal);
-				exit(0);
-            }
-            pthread_mutex_unlock(&(rules->meal_check));
-            usleep(100); // Eine kurze Pause, um die CPU-Last zu reduzieren
-        }
-        if (rules->dieded) {
-            // Ein Philosoph ist gestorben, also beende die Überprüfung
-            break;
-        }
-        // Überprüfe, ob alle Philosophen die vorgeschriebene Anzahl an Mahlzeiten gegessen haben
-        i = 0;
-        while (rules->nb_eat != -1 && i < rules->nb_philo && philosopher[i].x_ate >= rules->nb_eat) {
-            i++;
-        }
-        if (i == rules->nb_philo) {
-            // Alle Philosophen haben die vorgeschriebene Anzahl an Mahlzeiten gegessen
-            rules->all_ate = 1;
-        }
-    }
+	while (!(rules->all_ate))
+	{
+		i = -1;
+		while (++i < rules->nb_philo && !(rules->dieded))
+		{
+			pthread_mutex_lock(&(rules->meal_check));
+			time_since_last_meal = time_diff(philosopher[i].t_last_meal,
+					timestamp());
+			if (time_since_last_meal > rules->time_death)
+				death_checker_if_condition(rules, i, time_since_last_meal, philosopher);
+			pthread_mutex_unlock(&(rules->meal_check));
+			usleep(100);
+		}
+		if (rules->dieded)
+			break ;
+		i = 0;
+		while (rules->nb_eat != -1 && i < rules->nb_philo
+			&& philosopher[i].x_ate >= rules->nb_eat)
+			i++;
+		if (i == rules->nb_philo)
+			rules->all_ate = 1;
+	}
 }
 
-int		launcher(t_rules *rules)
+int	launcher(t_rules *rules)
 {
 	int				i;
 	t_philosopher	*philosopher;
@@ -113,7 +111,9 @@ int		launcher(t_rules *rules)
 	rules->first_timestamp = timestamp();
 	while (i < rules->nb_philo)
 	{
-		if (pthread_create(&(philosopher[i].thread_id), NULL, p_thread, &(philosopher[i])))
+		philosopher[i].is_running = 1;
+		if (pthread_create(&(philosopher[i].thread_id),
+				NULL, p_thread, &(philosopher[i])))
 			return (1);
 		philosopher[i].t_last_meal = timestamp();
 		i++;

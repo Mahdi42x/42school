@@ -6,7 +6,7 @@
 /*   By: mawada <mawada@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 15:17:11 by mawada            #+#    #+#             */
-/*   Updated: 2024/03/21 15:28:10 by mawada           ###   ########.fr       */
+/*   Updated: 2024/03/22 14:02:44 by mawada           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	init_mutex(t_rules *rules)
 {
-	int i;
+	int	i;
 
 	i = rules->nb_philo;
 	while (--i >= 0)
@@ -31,10 +31,10 @@ int	init_mutex(t_rules *rules)
 
 int	init_philosophers(t_rules *rules)
 {
+	int	i;
+
 	rules->all_ate = 0;
 	rules->dieded = 0;
-	int i;
-
 	i = rules->nb_philo;
 	while (--i >= 0)
 	{

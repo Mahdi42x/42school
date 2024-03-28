@@ -2,7 +2,7 @@
 NAME	=	philo
 
 CC		=	cc
-CFLAGS	=	-Wall -Werror -Wextra
+CFLAGS	=	-Wall -Werror -Wextra -g
 
 SRCS	=	philo.c src/error.c src/init.c src/utils.c src/launcher.c
 
